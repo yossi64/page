@@ -1,0 +1,14 @@
+runtime: python39
+
+handlers:
+- url: /thankyou.html
+  static_files: thankyou.html
+  upload: thankyou.html
+
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /(.*)
+  static_files: \1
+  upload: (.*)
