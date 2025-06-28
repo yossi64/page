@@ -9,7 +9,24 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
- gtag('config', 'AW-16971283096');
+  gtag('config', 'AW-16971283096');
+</script>
+
+<!-- Form Submission Conversion Tag - Fires on Thank You Page Load -->
+<script>
+  gtag('event', 'conversion', {
+    'send_to': 'AW-16971283096/UXwYCK6Wlr0aEPnSlI4-',
+    'value': 129.0,
+    'currency': 'USD',
+    'transaction_id': 'form_' + Date.now()
+  });
+  
+  // Debug logging for verification
+  console.log('Form submission conversion fired on thank you page load:', {
+    'send_to': 'AW-16971283096/UXwYCK6Wlr0aEPnSlI4-',
+    'value': 129.0,
+    'currency': 'USD'
+  });
 </script>
 
   <meta charset="UTF-8" />
@@ -74,7 +91,7 @@
 <body>
   <header>
     <h1>Air Duct & Dryer Vent Cleaning - $129</h1><br>
-    <a href="tel:2108730584" class="call-now">Call Now</a>
+    <a href="tel:2108730584" class="call-now" onclick="return gtag_report_conversion('tel:2108730584');">Call Now</a>
   </header>
 
   <section class="thank-you-section">
@@ -86,5 +103,36 @@
   <footer>
     <p>Email: yossi6466@gmail.com | Phone: 210-873-0584</p>
   </footer>
+
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) !== 'undefined') {
+        window.location = url;
+      }
+    };
+    
+    // Enhanced conversion tracking with all required parameters
+    gtag('event', 'conversion', {
+      'send_to': 'AW-16971283096/UXvYCK6Wl1roAeEJj1xJW_',
+      'value': 129.0,
+      'currency': 'USD',
+      'transaction_id': 'call_' + Date.now(),
+      'event_callback': callback,
+      'event_timeout': 2000
+    });
+    
+    // Debug logging for verification
+    console.log('Phone call conversion event sent:', {
+      'send_to': 'AW-16971283096/UXvYCK6Wl1roAeEJj1xJW_',
+      'value': 129.0,
+      'currency': 'USD',
+      'phone': '2108730584'
+    });
+    
+    return false;
+  }
+</script>
+
 </body>
 </html>
