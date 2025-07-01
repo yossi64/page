@@ -15,17 +15,22 @@
 <!-- Form Submission Conversion Tag - Fires on Thank You Page Load -->
 <script>
   gtag('event', 'conversion', {
-    'send_to': 'AW-16971283096/UXwYCK6Wlr0aEPnSlI4-',
+    'send_to': 'AW-16971283096/UXvYCK6Wl1roAeEJj1xJW_',
     'value': 129.0,
     'currency': 'USD',
-    'transaction_id': 'form_' + Date.now()
+    'transaction_id': 'form_' + Date.now(),
+    'event_callback': function() {
+      console.log('Form conversion callback executed');
+    },
+    'event_timeout': 2000
   });
   
-  // Debug logging for verification
   console.log('Form submission conversion fired on thank you page load:', {
-    'send_to': 'AW-16971283096/UXwYCK6Wlr0aEPnSlI4-',
+    'send_to': 'AW-16971283096/UXvYCK6Wl1roAeEJj1xJW_',
     'value': 129.0,
-    'currency': 'USD'
+    'currency': 'USD',
+    'transaction_id': 'form_' + Date.now(),
+    'timestamp': new Date().toISOString()
   });
 </script>
 
@@ -123,11 +128,12 @@
     });
     
     // Debug logging for verification
-    console.log('Phone call conversion event sent:', {
+    console.log('Phone call conversion event sent from thank you page:', {
       'send_to': 'AW-16971283096/UXvYCK6Wl1roAeEJj1xJW_',
       'value': 129.0,
       'currency': 'USD',
-      'phone': '2108730584'
+      'phone': '2108730584',
+      'timestamp': new Date().toISOString()
     });
     
     return false;
