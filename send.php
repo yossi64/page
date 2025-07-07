@@ -67,13 +67,7 @@ if ($mail_sent) {
     $error = error_get_last();
     error_log("FAILED: Email not sent to $to for lead: $name ($phone). Error: " . ($error['message'] ?? 'Unknown error'));
     
-    echo "<!DOCTYPE html><html><head><title>Thank You</title></head><body>";
-    echo "<h2>Thank You for Your Submission!</h2>";
-    echo "<p>We have received your information and will contact you soon at <strong>$phone</strong>.</p>";
-    echo "<p>If you need immediate assistance, please call us at <strong>(210) 873-0584</strong>.</p>";
-    echo "<p><a href='index.html'>Return to main page</a></p>";
-    echo "<script>setTimeout(function(){ window.location.href = 'thankyou.html'; }, 5000);</script>";
-    echo "</body></html>";
+    header("Location: thankyou.html");
     exit;
 }
 ?>
