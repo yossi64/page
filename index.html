@@ -125,12 +125,26 @@
       padding: 20px;
     }
     .promo-header {
-      background: white;
-      color: #333;
+      background: linear-gradient(45deg, #ff6b35, #f7931e);
+      color: white;
       text-align: center;
-      padding: 15px 20px;
+      padding: 20px 25px;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 20px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: 3px solid #fff;
+      border-radius: 10px;
+      margin: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
