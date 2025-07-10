@@ -22,17 +22,37 @@
       background-color: #ffffff;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       color: white;
       text-align: center;
       padding: 100px 20px;
       position: relative;
+      background-color: #000;
+    }
+    .before-after-gallery {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      z-index: 0;
+    }
+    .before-after-gallery img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+      opacity: 0.8;
     }
     header h1 {
       font-size: 36px;
       margin: 0;
       display: inline-block;
       padding: 15px 30px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
     }
     .call-now {
       margin-top: 20px;
@@ -116,6 +136,12 @@
 </head>
 <body>
   <header>
+    <div class="before-after-gallery">
+      <img src="processed_images/before_1.jpg" alt="Before Air Duct Cleaning">
+      <img src="processed_images/after_1.jpg" alt="After Air Duct Cleaning">
+      <img src="processed_images/before_2.jpg" alt="Before Air Duct Cleaning">
+      <img src="processed_images/after_2.jpg" alt="After Air Duct Cleaning">
+    </div>
     <div class="promo-header">
       🔥 Special June-July Promotion! Save up to 20% on all services! 🔥
     </div>
